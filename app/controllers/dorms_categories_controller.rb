@@ -1,0 +1,2 @@
+class DormsCategoriesController < ApplicationController
+end

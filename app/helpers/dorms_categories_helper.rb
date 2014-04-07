@@ -1,0 +1,2 @@
+module DormsCategoriesHelper
+end
