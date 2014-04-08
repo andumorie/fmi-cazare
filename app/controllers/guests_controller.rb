@@ -1,18 +1,18 @@
 class GuestsController < ApplicationController
 
   def index
-    if current_user
-      if current_user.is_student == "true"
+    if get_current_user
+      if get_current_user.is_student == "true"
         respond_to do |format|
           format.html { redirect_to '/profil_student' }
         end
       end
-      if current_user.is_management == "true"
+      if get_current_user.is_management == "true"
         respond_to do |format|
           format.html { redirect_to '/lista_cereri'}
         end
       end
-      if current_user.is_admin == "true"
+      if get_current_user.is_admin == "true"
         respond_to do |format|
           format.html { redirect_to '/lista_cereri_admin'}
         end
