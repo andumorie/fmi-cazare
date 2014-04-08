@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def login_required
-    if !current_user
+    if !get_current_user
       respond_to do |format|
         format.html  {
           redirect_to '/auth/autentificare/'
@@ -16,9 +16,12 @@ class ApplicationController < ActionController::Base
     end  
   end
 
-  def current_user
-    return nil unless session[:user]
-    @current_user ||= User.find_by_uid(session[:user]['uid'])
+  def get_current_user
+    if session[:user]
+      @current_user = User.find_by_uid(session[:user]['uid'])
+    else
+      return nil
+    end
   end
 
 end
