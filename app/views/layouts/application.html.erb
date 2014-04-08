@@ -24,8 +24,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Metologie</a></li>
-        <li><a href="/auth/autentificare">Autentificare</a></li>
+        <% if !@current_user %>
+          <li><a href="/auth/autentificare">Autentificare</a></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Cererea mea <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Creeaza</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Vezi</a>
+              <li><a href="#">Modifica</a></li>
+              <li><a href="#">Renunta</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Rezultate</a></li>
+          <li><a href="#">Notificari (0)</a></li>
+          <li><a href="/logout">Deconectare</a></li>
+        <% end %> 
+        <li><a href="#">Metodologie</a></li>
         <li><a href="#">Prezentare camine</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
