@@ -24,6 +24,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Metodologie</a></li>
+        <li><a href="#">Prezentare camine</a></li>
         <% if !@current_user %>
           <li><a href="/auth/autentificare">Autentificare</a></li>
         <% else %>
@@ -35,23 +37,23 @@
               <li><a href="#">Vezi</a>
               <li><a href="#">Modifica</a></li>
               <li><a href="#">Renunta</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Rezultate</a></li>
             </ul>
           </li>
-          <li><a href="#">Rezultate</a></li>
           <li><a href="#">Notificari (0)</a></li>
           <li><a href="/logout">Deconectare</a></li>
         <% end %> 
-        <li><a href="#">Metodologie</a></li>
-        <li><a href="#">Prezentare camine</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<%= yield %>
-	</div>
+<div class="container">
+  <div class="row">
+  	<div class="col-md-8 col-md-offset-2">
+  		<%= yield %>
+  	</div>
+  </div>
 </div>
 
 </body>

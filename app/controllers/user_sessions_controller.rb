@@ -1,6 +1,4 @@
 class UserSessionsController < ApplicationController
-  before_filter :login_required, :only => [ :destroy ]
-
   respond_to :html
 
   # omniauth callback method
@@ -43,7 +41,7 @@ class UserSessionsController < ApplicationController
   def destroy
     session[:user] = nil
 
-    flash[:notice] = 'You have successfully signed out!'
+    #flash[:notice] = 'You have successfully signed out!'
     redirect_to "#{CUSTOM_PROVIDER_URL}/users/sign_out"
   end
 
