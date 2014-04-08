@@ -23,8 +23,6 @@ class UserSessionsController < ApplicationController
     user.token = omniauth['credentials']['token']
     user.save
 
-    #p omniauth
-
     # Currently storing all the info
     session[:user] = omniauth
 
@@ -35,7 +33,6 @@ class UserSessionsController < ApplicationController
   # Omniauth failure callback
   def failure
     flash[:notice] = params[:message]
-
   end
 
   # logout - Clear our rack session BUT essentially redirect to the provider

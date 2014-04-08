@@ -1,5 +1,5 @@
 class AccomodationsController < ApplicationController
-  before_filter :get_current_user
+  before_filter :login_required
 
   respond_to :html
 
