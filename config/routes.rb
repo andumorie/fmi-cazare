@@ -20,10 +20,12 @@ FmiCazare::Application.routes.draw do
   get '/logout', to: 'user_sessions#destroy'
 
   #pagini student
+
   get '/creeaza_cerere', to: 'accomodations#new'
   get '/profil_student', to: 'accomodations#student_profile'
   get '/rezultate_verificare', to: 'accomodations#verified_results'
   get '/decizia_comisiei', to: 'accomodations#decision'
   get '/documente', to: 'accomodations#documents'
+
 
 end
