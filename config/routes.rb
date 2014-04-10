@@ -1,5 +1,7 @@
 FmiCazare::Application.routes.draw do
 
+  resources :rooms
+
   resources :guests
 
   resources :dorms_categories

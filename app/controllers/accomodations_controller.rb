@@ -12,7 +12,14 @@ class AccomodationsController < ApplicationController
   end
 
   def new
+    # GET /accomodations/creeaza_cerere
+    @camine = Dorm.all
+  end
 
+  def create
+    # POST /accomodations
+    cerere = Accomodation.new
+    cerere.uid = @current_user
   end
 
   def verified_results

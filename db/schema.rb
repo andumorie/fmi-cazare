@@ -11,21 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407221729) do
+ActiveRecord::Schema.define(version: 20140410140706) do
 
   create_table "accomodations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "last_dorm"
+    t.string   "last_room"
+    t.string   "is_continuity"
+    t.string   "is_social"
+    t.string   "dorm_pref_1"
+    t.string   "dorm_pref_2"
+    t.string   "dorm_pref_3"
+    t.string   "roommate_pref"
   end
 
   create_table "documents", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "url"
   end
 
   create_table "dorms", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "dorms_categories", force: true do |t|
@@ -36,6 +47,12 @@ ActiveRecord::Schema.define(version: 20140407221729) do
   create_table "guests", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "rooms", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "number"
   end
 
   create_table "user_sessions", force: true do |t|
@@ -56,6 +73,16 @@ ActiveRecord::Schema.define(version: 20140407221729) do
     t.string   "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "date_birth"
+    t.string   "place_birth"
+    t.string   "father_first_name"
+    t.string   "mother_first_name"
+    t.string   "ic_serie"
+    t.string   "ic_number"
+    t.string   "address"
+    t.string   "cnp"
+    t.string   "specialization"
+    t.string   "year"
   end
 
 end

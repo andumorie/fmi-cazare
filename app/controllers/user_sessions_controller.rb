@@ -19,6 +19,17 @@ class UserSessionsController < ApplicationController
     user.is_management  = omniauth['extra']['management']
     user.is_admin  = omniauth['extra']['admin']
     user.token = omniauth['credentials']['token']
+    user.date_birth = omniauth['extra']['date_birth']
+    user.place_birth = omniauth['extra']['place_birth']
+    user.father_first_name = omniauth['extra']['father_first_name']
+    user.mother_first_name = omniauth['extra']['mother_first_name']
+    user.ic_serie = omniauth['extra']['ic_serie']
+    user.ic_number = omniauth['extra']['ic_number']
+    user.address = omniauth['extra']['address']
+    user.cnp = omniauth['extra']['cnp']
+    user.specialization = omniauth['extra']['group']['specialization']
+    user.year = omniauth['extra']['group']['year']
+
     user.save
 
     # Currently storing all the info
