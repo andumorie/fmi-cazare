@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class UserSessionsController < ApplicationController
   respond_to :html
 
@@ -19,16 +22,19 @@ class UserSessionsController < ApplicationController
     user.is_management  = omniauth['extra']['management']
     user.is_admin  = omniauth['extra']['admin']
     user.token = omniauth['credentials']['token']
-    user.date_birth = omniauth['extra']['date_birth']
-    user.place_birth = omniauth['extra']['place_birth']
-    user.father_first_name = omniauth['extra']['father_first_name']
-    user.mother_first_name = omniauth['extra']['mother_first_name']
-    user.ic_serie = omniauth['extra']['ic_serie']
-    user.ic_number = omniauth['extra']['ic_number']
-    user.address = omniauth['extra']['address']
-    user.cnp = omniauth['extra']['cnp']
-    user.specialization = omniauth['extra']['group']['specialization']
-    user.year = omniauth['extra']['group']['year']
+
+    extra_fields = JSON.parse(open("http://fmi-autentificare.herokuapp.com/users/#{user.uid}.json?oauth_token=#{user.token}").read)
+
+    user.date_birth = extra_fields['user']['date_birth']
+    user.place_birth = extra_fields['user']['place_birth']
+    user.father_first_name = extra_fields['user']['father_first_name']
+    user.mother_first_name = extra_fields['user']['mother_first_name']
+    user.ic_serie = extra_fields['user']['ic_serie']
+    user.ic_number = extra_fields['user']['ic_number']
+    user.address = extra_fields['user']['address']
+    user.cnp = extra_fields['user']['cnp']
+    user.specialization = extra_fields['user']['group']['specialization']
+    user.year = extra_fields['user']['group']['year']
 
     user.save
 
