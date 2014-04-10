@@ -11,4 +11,20 @@ class AccomodationsController < ApplicationController
 
   end
 
+  def new
+
+  end
+
+  def verified_results
+
+  end
+
+  def decision
+
+  end
+
+  def documents
+
+  end
+
 end
