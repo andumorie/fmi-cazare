@@ -1,0 +1,145 @@
+<form method="post" action="/accomodations"/>
+<div class="row">
+		<div class="row cerere_header">
+			<ul class="cerere_header">
+				<li class="t1 active"><span class="label">1</span><span>Date personale</span></li>
+
+				<li class="t2"><span class="label">2</span><span>Upload studii si fisiere</span></li>
+
+				<li class="t3"><span class="label">3</span><span>Date cazare</span></li>
+			</ul>
+		</div>
+		<div class="row tc1 tab tab_active">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-3">
+								Nume
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.last_name;%>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								Prenume
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.first_name;%>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								Prenume Tata
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.father_first_name;%>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								Prenume Mama
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.mother_first_name;%>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								Adresa
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.address;%>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-3">
+								Data Nasterii
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.date_birth;%>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								Locul Nasterii
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.place_birth;%>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								BI/CI Serie
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.ic_serie;%>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								BI/CI Numar
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.ic_number;%>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-3">
+								CNP
+						</div>
+						<div class="field_value col-md-3">
+								<%=@current_user.cnp;%>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="row form_controls">
+				<button class="btn floatR" type="button" onclick='changeTab(2);'>Pasul Urmator</button>
+			</div>
+		</div>
+		<div class="row tc2 tab">
+			
+
+			
+
+			<div class="row form_controls" >
+				<button class="btn floatL" type="button" onclick='changeTab(1);'>Pasul Precedent</button>
+				<button class="btn floatR" type="button" onclick='changeTab(3);'>Pasul Urmator</button>
+			</div>
+		</div>
+		<div class="row tc3 tab">
+			 
+			<div class="row form_controls">
+				<button class="btn floatL" type="button" onclick='changeTab(2);'>Pasul Precedent</button>
+				<button class="btn floatR" type="submit">Pasul Urmator</button>
+			</div>
+		</div>
+</div>
+</form>
+<script type="text/javascript">
+function changeTab(nr){
+	$(".active").removeClass("active");
+	$(".tab_active").removeClass("tab_active");
+	$(".tc"+nr).addClass("tab_active");
+	$(".t"+nr).addClass("active");
+}
+</script>
