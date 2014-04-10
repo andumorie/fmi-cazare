@@ -19,7 +19,13 @@ class AccomodationsController < ApplicationController
   def create
     # POST /accomodations
     cerere = Accomodation.new
-    cerere.uid = @current_user
+
+
+    if (cerere.save)
+      @current_user.accomodation = cerere
+      @current_user.save
+    end
+    
   end
 
   def verified_results
