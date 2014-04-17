@@ -32,7 +32,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'omniauth'
 gem 'omniauth-oauth2'
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
