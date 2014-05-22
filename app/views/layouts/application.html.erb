@@ -1,60 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FmiCazare</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">FMI Cazare</a>
+  <head>
+    <title>FmiCazare</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      		<%= yield %>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Metodologie</a></li>
-        <li><a href="#">Prezentare camine</a></li>
-        <% if !@current_user %>
-          <li><a href="/auth/autentificare">Autentificare</a></li>
-        <% else %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Cererea mea <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <% if @current_user.accomodation.nil? %>
-                <li><a href="creeaza_cerere">Creeaza cerere</a></li>
-              <% else %>
-                <li><a href="vezi_cerere">Vezi cerere</a>
-              <% end %>
-              <li class="divider"></li>
-              <li><a href="#">Vezi decizie comisie</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Notificari (0)</a></li>
-          <li><a href="/logout">Deconectare</a></li>
-        <% end %> 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<div class="container">
-  <div class="row">
-  	<div class="col-md-8 col-md-offset-2">
-  		<%= yield %>
-  	</div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

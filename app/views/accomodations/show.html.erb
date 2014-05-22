@@ -1,296 +1,201 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.selectpicker').selectpicker();
+    });
+</script>
+
 <%= form_for @accomodation, :html => { :multipart => true } do |f| %>
 <%= token_tag %>
-<div class="row">
-		<div class="row cerere_header">
-			<ul class="cerere_header">
-				<li class="t1 active"><span class="label">1</span><span>Date personale</span></li>
+<div class = "container">
 
-				<li class="t2"><span class="label">2</span><span>Upload studii si fisiere</span></li>
+  <div class = "navbar navbar-default ">
+    <div class = "navbar-brand minilogo">
+      Date Personale
+    </div>
 
-				<li class="t3"><span class="label">3</span><span>Date cazare</span></li>
-			</ul>
-		</div>
-		<div class="row tc1 tab tab_active">
-			<br><br>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="row">
-						<div class="field_label col-md-6">
-								Nume
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.last_name %>
-						</div>
-					</div>
+  </div>
 
-					<div class="row">
-						<div class="field_label col-md-6">
-								Prenume
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.first_name %>
-						</div>
-					</div>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Nume</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.last_name %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Prenume</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.first_name %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Prenume Tata</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.father_first_name %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Prenume Mama</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.mother_first_name %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Adresa</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.address %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Data nasterii</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.date_birth %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Locul Nasterii</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.place_birth %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">BI/CI Serie</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.ic_serie %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">BI/CI Numar</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.ic_number %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">CNP</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.cnp %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Facultate</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">Matematica si Informatica</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Sectie</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.specialization %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">An</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @current_user.year %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="uploadFisiere" class="col-sm-2 control-label">Upload Fisiere</label>
+      <div class="col-sm-10">
+      <% if @editable == '' %>
+        <%= file_field_tag 'documents[]', multiple: true %>
+      <% end %>
+        <p class="help-block">Pt a uploada fisiere, anuleaza cererea curenta si creeaza una noua <%= @editable %>.</p>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for="Camine" class="col-sm-2 control-label">Anul trecut am domiciliat in caminul</label>
+      <div class = "col-sm-10">
+        <select name = "last_dorm" class="form-control" <%= @editable %>>
+          <% @dorms.each do |dorm| %>
+            <option value="<%= dorm.id %>" <%= (@accomodation.last_dorm == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+          <% end %>
+        </select>
 
-					<div class="row">
-						<div class="field_label col-md-6">
-								Prenume Tata
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.father_first_name %>
-						</div>
-					</div>
+        <br />
+      </div>
+    </div>
 
+    <div class="form-group">
+      <label for="camera" class="col-sm-2 control-label">Camera</label>
+      <div class="col-sm-10">
+        <input type="cameraCamin" class="form-control" id="CameraCamin" placeholder="Camera de camin din anul precedent"value="<%= @accomodation.last_room %>" <%= @editable %>>
+        <br />
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 1</label>
+      <div class = "col-sm-10">
+        <select class="form-control">
+          <% @dorms.each do |dorm| %>
+            <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_1 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 2</label>
+      <div class = "col-sm-10">
+        <select class="form-control">
+          <% @dorms.each do |dorm| %>
+            <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_2 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
 
-					<div class="row">
-						<div class="field_label col-md-6">
-								Prenume Mama
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.mother_first_name %>
-						</div>
-					</div>
+    <div class = "form-group">
+      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 3</label>
+      <div class = "col-sm-10">
+        <select class="form-control">
+          <% @dorms.each do |dorm| %>
+            <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_3 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+          <% end %>
+        </select>
+        <br />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="camera" class="col-sm-2 control-label">Preferinte Coleg</label>
+      <div class="col-sm-10">
+        <input type="preferinteColeg" name = "roommate_pref" class="form-control" id="colegCamin" value="<%= @accomodation.roommate_pref %>" <%= @editable %>>
+        <br />
+      </div>
+    </div>
+    <div class = "form-group">
+      <label class = "col-sm-2 control-label"> Rog comisia sa tin cont de: </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="option1" name = "is_continuity"<%= (!@accomodation.is_continuity.nil?) ? 'checked' : '' %> <%= @editable %>> Continuitate
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox2" value="option2" name = "is_social"name="is_social" <%= (!@accomodation.is_social.nil?) ? 'checked' : '' %> <%= @editable %>> Situatie sociala
+      </label>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" style="margin-right: 10px;" onclick="cancelRequest(<%= @accomodation.id %>)" class="btn btn-danger">Anuleaza</button>
+      </div>
+    </div>
 
-
-					<div class="row">
-						<div class="field_label col-md-6">
-								Adresa
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.address %>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="row">
-						<div class="field_label col-md-6">
-								Data Nasterii
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.date_birth %>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="field_label col-md-6">
-								Locul Nasterii
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.place_birth %>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="field_label col-md-6">
-								BI/CI Serie
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.ic_serie %>
-						</div>
-					</div>
-
-
-					<div class="row">
-						<div class="field_label col-md-6">
-								BI/CI Numar
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.ic_number %>
-						</div>
-					</div>
-
-
-					<div class="row">
-						<div class="field_label col-md-6">
-								CNP
-						</div>
-						<div class="field_value col-md-6">
-								<%= @current_user.cnp %>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br><br>
-			<div class="row form_controls">
-				<a href="/profil_student" class="btn btn-primary floatL">Inapoi</a>
-				<button class="btn btn-primary floatR" type="button" onclick='changeTab(2);'>Pasul Urmator</button>
-			</div>
-		</div>
-		<div class="row tc2 tab">
-			<br><br>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="row">
-						<div class="field_label col-md-6">
-							Facultate
-						</div>
-						<div class="field_value col-md-6">
-							Matematica-Informatica
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="field_label col-md-6">
-							Sectie
-						</div>
-						<div class="field_value col-md-6">
-							<%= @current_user.specialization %>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="field_label col-md-6">
-							An
-						</div>
-						<div class="field_value col-md-6">
-							<%= @current_user.year %>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="row">
-						<div id="files"></div>
-						<div class="field_label col-md-6">
-							Upload fisiere
-						</div>
-						<% if @editable == '' %>
-							<div class="field_value col-md-6">
-								<%= file_field_tag 'documents[]', multiple: true %>
-							</div>
-						<% end %>
-					</div>				
-				</div>
-			</div>
-			<br><br>
-			<div class="row form_controls" >
-				<button class="btn btn-primary floatL" type="button" onclick='changeTab(1);'>Pasul Precedent</button>
-				<button class="btn btn-primary floatR" type="button" onclick='changeTab(3);'>Pasul Urmator</button>
-			</div>
-		</div>
-		<div class="row tc3 tab">
-			<br><br>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="row">
-						<div class="field_label col-md-6">
-							Anul trecut am domiciliat in caminul
-						</div>
-						<div class="field_value col-md-6">
-							<select name="last_dorm" <%= @editable %>>
-								<option value=""></option>
-								<% @dorms.each do |dorm| %>
-									<option value="<%= dorm.id %>" <%= (@accomodation.last_dorm == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-								<% end %>
-							</select>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="field_label col-md-6">
-							Camera
-						</div>
-						<div class="field_value col-md-6">
-							<input type="text" name="last_room" value="<%= @accomodation.last_room %>" <%= @editable %>>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="field_label col-md-12">
-							Rog comisia sa tina cont de:
-						</div>
-						<div class="field_value col-md-11 col-md-offset-1">
-							<label><input type="checkbox" name="is_continuity" <%= (!@accomodation.is_continuity.nil?) ? 'checked' : '' %> <%= @editable %>>continuitate</label>
-						</div>
-						<div class="field_value col-md-11 col-md-offset-1">
-							<label><input type="checkbox" name="is_social" <%= (!@accomodation.is_social.nil?) ? 'checked' : '' %> <%= @editable %>>situatie sociala</label>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="row">
-						<div class="field_label col-md-6">
-							Preferinte camin 1:
-						</div>
-						<div class="field_value col-md-6">
-							<select name="dorm_pref_1" <%= @editable %>>
-								<option value=""></option>
-								<% @dorms.each do |dorm| %>
-									<option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_1 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-								<% end %>
-							</select>
-						</div>
-					</div>
-					<div class="row">
-						<div class="field_label col-md-6">
-							Preferinte camin 2:
-						</div>
-						<div class="field_value col-md-6">
-							<select name="dorm_pref_2" <%= @editable %>>
-								<option value=""></option>
-								<% @dorms.each do |dorm| %>
-									<option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_2 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-								<% end %>
-							</select>
-						</div>
-					</div>
-					<div class="row">
-						<div class="field_label col-md-6">
-							Preferinte camin 3:
-						</div>
-						<div class="field_value col-md-6">
-							<select name="dorm_pref_3" <%= @editable %>>
-								<option value=""></option>
-								<% @dorms.each do |dorm| %>
-									<option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_3 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-								<% end %>
-							</select>
-						</div>
-					</div>
-					<div class="row">
-						<div class="field_label col-md-6">
-							Preferinte coleg
-						</div>
-						<div class="field_value col-md-6">
-							<input type="text" name="roommate_pref" value="<%= @accomodation.roommate_pref %>" <%= @editable %>>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br><br>
-			<div class="row form_controls">
-				<button style="margin-right: 10px;" class="btn btn-primary floatL" type="button" onclick='changeTab(2);'>Pasul Precedent</button>
-				<% if @editable == '' %>
-					<button style="margin-right: 10px;" class="btn btn-success floatR" name="sent" type="submit">Depune</button>
-					<button style="margin-right: 10px;" class="btn btn-info floatR" name="saved" type="submit">Salveaza</button>
-				<% end %>
-				<button type="button" style="margin-right: 10px;" onclick="cancelRequest(<%= @accomodation.id %>)" class="btn btn-danger floatR">Anuleaza</button>
-			</div>
-		</div>
+  </form>
 </div>
+
 <% end %>
 <script type="text/javascript">
 
-	function changeTab(nr){
-		$(".active").removeClass("active");
-		$(".tab_active").removeClass("tab_active");
-		$(".tc"+nr).addClass("tab_active");
-		$(".t"+nr).addClass("active");
-	}
 
-	function cancelRequest(id) {
-		$.ajax({
-		    url: '/accomodations/' + id,
-		    type: 'DELETE',
-		    dataType: 'JSON',
-		    success: function(result) {
-		        window.location.href = result.data;
-		    },
-		    error: function(result) {
-		    	console.log(result);
-		    }
-		});
-	}
+  function cancelRequest(id) {
+    $.ajax({
+        url: '/accomodations/' + id,
+        type: 'DELETE',
+        dataType: 'JSON',
+        success: function(result) {
+            window.location.href = result.data;
+        },
+        error: function(result) {
+          console.log(result);
+        }
+    });
+  }
 
 </script>

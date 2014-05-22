@@ -8,6 +8,7 @@ development:
   database: fmi-cazare
   pool: 5
   timeout: 5000
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,9 +18,11 @@ test:
   database: fmi-cazare
   pool: 5
   timeout: 5000
+  host: localhost
 
 production:
   adapter: postgresql
   database: fmi-cazare
   pool: 5
   timeout: 5000
+  host: localhost

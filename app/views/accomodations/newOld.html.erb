@@ -1,0 +1,268 @@
+<%= form_for @accomodation, :html => { :multipart => true } do |f| %>
+<%= token_tag %>
+<div class="row">
+		<div class="row cerere_header">
+			<ul class="cerere_header">
+				<li class="t1 active"><span class="label">1</span><span>Date personale</span></li>
+
+				<li class="t2"><span class="label">2</span><span>Upload studii si fisiere</span></li>
+
+				<li class="t3"><span class="label">3</span><span>Date cazare</span></li>
+			</ul>
+		</div>
+		<div class="row tc1 tab tab_active">
+			<br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-6">
+								Nume
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.last_name %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								Prenume
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.first_name %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								Prenume Tata
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.father_first_name %>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								Prenume Mama
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.mother_first_name %>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								Adresa
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.address %>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-6">
+								Data Nasterii
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.date_birth %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								Locul Nasterii
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.place_birth %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								BI/CI Serie
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.ic_serie %>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								BI/CI Numar
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.ic_number %>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="field_label col-md-6">
+								CNP
+						</div>
+						<div class="field_value col-md-6">
+								<%= @current_user.cnp %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="row form_controls">
+				<a href="/profil_student" class="btn btn-primary floatL">Inapoi</a>
+				<button class="btn btn-primary floatR" type="button" onclick='changeTab(2);'>Pasul Urmator</button>
+			</div>
+		</div>
+		<div class="row tc2 tab">
+			<br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-6">
+							Facultate
+						</div>
+						<div class="field_value col-md-6">
+							Matematica-Informatica
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+							Sectie
+						</div>
+						<div class="field_value col-md-6">
+							<%= @current_user.specialization %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+							An
+						</div>
+						<div class="field_value col-md-6">
+							<%= @current_user.year %>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="row">
+						<div id="files"></div>
+						<div class="field_label col-md-6">
+							Upload fisiere
+						</div>
+						<div class="field_value col-md-6">
+							<%= file_field_tag 'documents[]', multiple: true %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="row form_controls" >
+				<button class="btn btn-primary floatL" type="button" onclick='changeTab(1);'>Pasul Precedent</button>
+				<button class="btn btn-primary floatR" type="button" onclick='changeTab(3);'>Pasul Urmator</button>
+			</div>
+		</div>
+		<div class="row tc3 tab">
+			<br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-6">
+							Anul trecut am domiciliat in caminul
+						</div>
+						<div class="field_value col-md-6">
+							<select name="last_dorm">
+								<option value=""></option>
+								<% @dorms.each do |dorm| %>
+									<option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
+								<% end %>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-6">
+							Camera
+						</div>
+						<div class="field_value col-md-6">
+							<input type="text" name="last_room" value="<% @current_user.last_room %>">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field_label col-md-12">
+							Rog comisia sa tina cont de:
+						</div>
+						<div class="field_value col-md-11 col-md-offset-1">
+							<label><input type="checkbox" name="is_continuity">continuitate</label>
+						</div>
+						<div class="field_value col-md-11 col-md-offset-1">
+							<label><input type="checkbox" name="is_social">situatie sociala</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="row">
+						<div class="field_label col-md-6">
+							Preferinte camin 1:
+						</div>
+						<div class="field_value col-md-6">
+							<select name="dorm_pref_1">
+								<option value=""></option>
+								<% @dorms.each do |dorm| %>
+									<option value="<%= dorm.id %>"><%= dorm.name %></option>
+								<% end %>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="field_label col-md-6">
+							Preferinte camin 2:
+						</div>
+						<div class="field_value col-md-6">
+							<select name="dorm_pref_2">
+								<option value=""></option>
+								<% @dorms.each do |dorm| %>
+									<option value="<%= dorm.id %>"><%= dorm.name %></option>
+								<% end %>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="field_label col-md-6">
+							Preferinte camin 3:
+						</div>
+						<div class="field_value col-md-6">
+							<select name="dorm_pref_3">
+								<option value=""></option>
+								<% @dorms.each do |dorm| %>
+									<option value="<%= dorm.id %>"><%= dorm.name %></option>
+								<% end %>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="field_label col-md-6">
+							Preferinte coleg
+						</div>
+						<div class="field_value col-md-6">
+							<input type="text" name="roommate_pref">
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="row form_controls">
+				<button style="margin-right: 10px;" class="btn btn-primary floatL" type="button" onclick='changeTab(2);'>Pasul Precedent</button>
+				<button style="margin-right: 10px;" class="btn btn-success floatR" name="sent" type="submit">Depune</button>
+				<button style="margin-right: 10px;" class="btn btn-info floatR" name="saved" type="submit">Salveaza</button>
+				<a style="margin-right: 10px;" href="/profil_student" class="btn btn-danger floatR">Anuleaza</a>
+			</div>
+		</div>
+</div>
+<% end %>

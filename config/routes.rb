@@ -22,11 +22,13 @@ FmiCazare::Application.routes.draw do
   get '/logout', to: 'user_sessions#destroy'
 
   #pagini student
-  get '/creeaza_cerere', to: 'accomodations#new'
-  get '/vezi_cerere', to: 'accomodations#show'
-  get '/profil_student', to: 'accomodations#student_profile'
-  get '/rezultate_verificare', to: 'accomodations#verified_results'
-  get '/decizia_comisiei', to: 'accomodations#decision'
+  match '/creeaza_cerere', to: 'accomodations#new', via: 'get'
+  match '/vezi_cerere', to: 'accomodations#show', via: 'get'
+  match '/profil_student', to: 'accomodations#student_profile', via: 'get'
+  match '/rezultate_verificare', to: 'accomodations#verified_results', via: 'get'
+  match '/decizia_comisiei', to: 'accomodations#decision', via: 'get'
+  match '/metodologie', to:'accomodations#metodologie', via: 'get'
+  match '/camine', to: 'accomodations#camine', via: 'get'
 
 
 end
