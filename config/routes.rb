@@ -23,10 +23,10 @@ FmiCazare::Application.routes.draw do
 
   #pagini student
   get '/creeaza_cerere', to: 'accomodations#new'
+  get '/vezi_cerere', to: 'accomodations#show'
   get '/profil_student', to: 'accomodations#student_profile'
   get '/rezultate_verificare', to: 'accomodations#verified_results'
   get '/decizia_comisiei', to: 'accomodations#decision'
-  get '/documente', to: 'accomodations#documents'
 
 
 end
