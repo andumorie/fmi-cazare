@@ -59,8 +59,11 @@ class AccomodationsController < ApplicationController
         params[:documents].each do |document|
           @accomodation.documents.create({'name' => document.original_filename})
 
-          path = File.join("uploads", @current_user.uid.to_s, document.original_filename)
+          # create directories if they don't exist
+          Dir.mkdir(File.join("uploads")) unless Dir.exists?(File.join("uploads"))
           Dir.mkdir(File.join("uploads", @current_user.uid.to_s)) unless Dir.exists?(File.join("uploads", @current_user.uid.to_s))
+
+          path = File.join("uploads", @current_user.uid.to_s, document.original_filename)
           File.open(path, "wb") { |f| f.write(document.read) }
         end
       end
@@ -106,8 +109,11 @@ class AccomodationsController < ApplicationController
         params[:documents].each do |document|
           @accomodation.documents.create({'name' => document.original_filename})
 
-          path = File.join("uploads", @current_user.uid.to_s, document.original_filename)
+          # create directories if they don't exist
+          Dir.mkdir(File.join("uploads")) unless Dir.exists?(File.join("uploads"))
           Dir.mkdir(File.join("uploads", @current_user.uid.to_s)) unless Dir.exists?(File.join("uploads", @current_user.uid.to_s))
+
+          path = File.join("uploads", @current_user.uid.to_s, document.original_filename)
           File.open(path, "wb") { |f| f.write(document.read) }
         end
       end
