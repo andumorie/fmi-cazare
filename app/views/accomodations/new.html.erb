@@ -8,175 +8,181 @@
 <%= token_tag %>
 <div class = "container">
 
-  <div class = "navbar navbar-default ">
-    <div class = "navbar-brand minilogo">
-      Date Personale
-    </div>
+  <div class = "container">
 
+    <div class = "navbar navbar-default ">
+      <div class = "navbar-brand minilogo">
+        Date Personale
+      </div>
+
+    </div>
   </div>
 
-  <form class="form-horizontal" role="form">
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Nume</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.last_name %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Prenume</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.first_name %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Prenume Tata</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.father_first_name %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Prenume Mama</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.mother_first_name %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Adresa</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.address %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Data nasterii</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.date_birth %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Locul Nasterii</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.place_birth %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">BI/CI Serie</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.ic_serie %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">BI/CI Numar</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.ic_number %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">CNP</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.cnp %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Facultate</label>
-      <div class="col-sm-10">
-        <p class="form-control-static">Matematica si Informatica</p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Sectie</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.specialization %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">An</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.year %></p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="uploadFisiere" class="col-sm-2 control-label">Upload Fisiere</label>
-      <div class="col-sm-10">
-        <%= file_field_tag 'documents[]', multiple: true %>
-        <p class="help-block">Uploadeaza fisierele necesare pt confirmarea situatiei scolare.</p>
-      </div>
-    </div>
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Anul trecut am domiciliat in caminul</label>
-      <div class = "col-sm-10">
-        <select class="form-control">
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
-        <br />
-      </div>
-    </div>
+  <div class = "container testMe">
 
-    <div class="form-group">
-      <label for="camera" class="col-sm-2 control-label">Camera</label>
-      <div class="col-sm-10">
-        <input type="text" name = "last_room" class="form-control" id="CameraCamin" placeholder="Camera de camin din anul precedent" value ="<% @current_user.last_room %>">
-        <br />
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nume</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.last_name %></p>
+        </div>
       </div>
-    </div>
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 1</label>
-      <div class = "col-sm-10">
-        <select class="form-control">
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Prenume</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.first_name %></p>
+        </div>
       </div>
-    </div>
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 2</label>
-      <div class = "col-sm-10">
-        <select class="form-control">
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Prenume Tata</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.father_first_name %></p>
+        </div>
       </div>
-    </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Prenume Mama</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.mother_first_name %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Adresa</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.address %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Data nasterii</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.date_birth %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Locul Nasterii</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.place_birth %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">BI/CI Serie</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.ic_serie %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">BI/CI Numar</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.ic_number %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">CNP</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.cnp %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Facultate</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">Matematica si Informatica</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Sectie</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.specialization %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">An</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.year %></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="uploadFisiere" class="col-sm-2 control-label">Upload Fisiere</label>
+        <div class="col-sm-10">
+          <%= file_field_tag 'documents[]', multiple: true %>
+          <p class="help-block">Uploadeaza fisierele necesare pt confirmarea situatiei scolare.</p>
+        </div>
+      </div>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Anul trecut am domiciliat in caminul</label>
+        <div class = "col-sm-10">
+          <select class="form-control resize">
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+          <br />
+        </div>
+      </div>
 
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 3</label>
-      <div class = "col-sm-10">
-        <select class="form-control">
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
-        <br />
+      <div class="form-group">
+        <label for="camera" class="col-sm-2 control-label">Camera</label>
+        <div class="col-sm-10">
+          <input type="text" name = "last_room" class="form-control resize" id="CameraCamin" placeholder="Camera de camin din anul precedent" value ="<% @current_user.last_room %>">
+          <br />
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="camera" class="col-sm-2 control-label">Preferinte Coleg</label>
-      <div class="col-sm-10">
-        <input type="preferinteColeg" name = "roommate_pref" class="form-control" id="colegCamin" placeholder="Numele persoanei cu care preferi sa stai" value = >
-        <br />
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 1</label>
+        <div class = "col-sm-10">
+          <select class="form-control resize">
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class = "form-group">
-      <label class = "col-sm-2 control-label"> Rog comisia sa tin cont de: </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1" name = "is_continuity"> Continuitate
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2" name = "is_social"> Situatie sociala
-      </label>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <a style="margin-right: 10px;" href="/profil_student" class="btn btn-danger">Anuleaza</a>
-        <button style="margin-right: 10px;" class="btn btn-info " name="saved" type="submit">Salveaza</button>
-        <button style="margin-right: 10px;" class="btn btn-success " name="sent" type="submit">Depune</button>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 2</label>
+        <div class = "col-sm-10">
+          <select class="form-control resize">
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+        </div>
       </div>
-    </div>
 
-  </form>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 3</label>
+        <div class = "col-sm-10">
+          <select class="form-control resize">
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@current_user.last_dorm == dorm.id) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+          <br />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="camera" class="col-sm-2 control-label">Preferinte Coleg</label>
+        <div class="col-sm-10">
+          <input type="preferinteColeg" name = "roommate_pref" class="form-control resize" id="colegCamin" placeholder="Numele persoanei cu care preferi sa stai" value = >
+          <br />
+        </div>
+      </div>
+      <div class = "form-group">
+        <label class = "col-sm-2 control-label"> Rog comisia sa tin cont de: </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" value="option1" name = "is_continuity"> Continuitate
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" value="option2" name = "is_social"> Situatie sociala
+        </label>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <a style="margin-right: 10px;" href="/profil_student" class="btn btn-danger">Anuleaza</a>
+          <button style="margin-right: 10px;" class="btn btn-info " name="saved" type="submit">Salveaza</button>
+          <button style="margin-right: 10px;" class="btn btn-success " name="sent" type="submit">Depune</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>
 
 <% end %>
