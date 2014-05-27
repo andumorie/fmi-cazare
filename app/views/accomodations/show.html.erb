@@ -105,7 +105,7 @@
     <div class = "form-group">
       <label for="Camine" class="col-sm-2 control-label">Anul trecut am domiciliat in caminul</label>
       <div class = "col-sm-10">
-        <select name = "last_dorm" class="form-control" <%= @editable %>>
+        <select name = "last_dorm" class="form-control resize" <%= @editable %>>
           <% @dorms.each do |dorm| %>
             <option value="<%= dorm.id %>" <%= (@accomodation.last_dorm == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
           <% end %>
@@ -118,14 +118,14 @@
     <div class="form-group">
       <label for="camera" class="col-sm-2 control-label">Camera</label>
       <div class="col-sm-10">
-        <input type="cameraCamin" class="form-control" id="CameraCamin" placeholder="Camera de camin din anul precedent"value="<%= @accomodation.last_room %>" <%= @editable %>>
+        <input type="cameraCamin" class="form-control resize" id="CameraCamin" placeholder="Camera de camin din anul precedent"value="<%= @accomodation.last_room %>" <%= @editable %>>
         <br />
       </div>
     </div>
     <div class = "form-group">
       <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 1</label>
       <div class = "col-sm-10">
-        <select class="form-control">
+        <select class="form-control resize" <%= @editable %>>
           <% @dorms.each do |dorm| %>
             <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_1 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
           <% end %>
@@ -135,7 +135,7 @@
     <div class = "form-group">
       <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 2</label>
       <div class = "col-sm-10">
-        <select class="form-control">
+        <select class="form-control resize" <%= @editable %>>
           <% @dorms.each do |dorm| %>
             <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_2 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
           <% end %>
@@ -146,7 +146,7 @@
     <div class = "form-group">
       <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 3</label>
       <div class = "col-sm-10">
-        <select class="form-control">
+        <select class="form-control resize" <%= @editable %>>
           <% @dorms.each do |dorm| %>
             <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_3 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
           <% end %>
@@ -157,7 +157,7 @@
     <div class="form-group">
       <label for="camera" class="col-sm-2 control-label">Preferinte Coleg</label>
       <div class="col-sm-10">
-        <input type="preferinteColeg" name = "roommate_pref" class="form-control" id="colegCamin" value="<%= @accomodation.roommate_pref %>" <%= @editable %>>
+        <input type="preferinteColeg" name = "roommate_pref" class="form-control resize" id="colegCamin" value="<%= @accomodation.roommate_pref %>" <%= @editable %>>
         <br />
       </div>
     </div>
