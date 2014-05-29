@@ -173,8 +173,10 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
         <button type="button" style="margin-right: 10px;" onclick="cancelRequest(<%= @accomodation.id %>)" class="btn btn-danger">Anuleaza</button>
+        <% if @editable == '' %>
         <button style="margin-right: 10px;" class="btn btn-info " name="saved" type="submit">Salveaza</button>
         <button style="margin-right: 10px;" class="btn btn-success " name="sent" type="submit">Depune</button>
+        <% end %>
         </div>
       </div>
     </div>
