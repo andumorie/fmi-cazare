@@ -14,168 +14,170 @@
     </div>
   </div>
 
-  <form class="form-horizontal" role="form">
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Nume</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.last_name %></p>
+  <form class="form-horizonta" role="form">
+      <div class = "container  ddMenu navbar navbar-default">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nume</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.last_name %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Prenume</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.first_name %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Prenume</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.first_name %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Prenume Tata</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.father_first_name %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Prenume Tata</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.father_first_name %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Prenume Mama</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.mother_first_name %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Prenume Mama</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.mother_first_name %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Adresa</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.address %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Adresa</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.address %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Data nasterii</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.date_birth %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Data nasterii</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.date_birth %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Locul Nasterii</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.place_birth %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Locul Nasterii</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.place_birth %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">BI/CI Serie</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.ic_serie %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">BI/CI Serie</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.ic_serie %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">BI/CI Numar</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.ic_number %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">BI/CI Numar</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.ic_number %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">CNP</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.cnp %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">CNP</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.cnp %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Facultate</label>
-      <div class="col-sm-10">
-        <p class="form-control-static">Matematica si Informatica</p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Facultate</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">Matematica si Informatica</p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Sectie</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.specialization %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Sectie</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.specialization %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">An</label>
-      <div class="col-sm-10">
-        <p class="form-control-static"><%= @current_user.year %></p>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">An</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @current_user.year %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="uploadFisiere" class="col-sm-2 control-label">Upload Fisiere</label>
-      <div class="col-sm-10">
-      <% if @editable == '' %>
-        <%= file_field_tag 'documents[]', multiple: true %>
-      <% end %>
-        <p class="help-block">Pt a uploada fisiere, anuleaza cererea curenta si creeaza una noua <%= @editable %>.</p>
+      <div class="form-group">
+        <label for="uploadFisiere" class="col-sm-2 control-label">Upload Fisiere</label>
+        <div class="col-sm-10">
+        <% if @editable == '' %>
+          <%= file_field_tag 'documents[]', multiple: true %>
+        <% end %>
+          <p class="help-block">Pt a uploada fisiere, anuleaza cererea curenta si creeaza una noua <%= @editable %>.</p>
+        </div>
       </div>
-    </div>
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Anul trecut am domiciliat in caminul</label>
-      <div class = "col-sm-10">
-        <select name = "last_dorm" class="form-control resize" <%= @editable %>>
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@accomodation.last_dorm == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Anul trecut am domiciliat in caminul</label>
+        <div class = "col-sm-10">
+          <select name = "last_dorm" class="form-control resize" <%= @editable %>>
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@accomodation.last_dorm == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
 
-        <br />
+          <br />
+        </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label for="camera" class="col-sm-2 control-label">Camera</label>
-      <div class="col-sm-10">
-        <input type="cameraCamin" class="form-control resize" id="CameraCamin" placeholder="Camera de camin din anul precedent"value="<%= @accomodation.last_room %>" <%= @editable %>>
-        <br />
+      <div class="form-group">
+        <label for="camera" class="col-sm-2 control-label">Camera</label>
+        <div class="col-sm-10">
+          <input type="text" name = "last_room" class="form-control resize" id="CameraCamin" placeholder="Camera de camin din anul precedent"value="<%= @accomodation.last_room %>" <%= @editable %>>
+          <br />
+        </div>
+      </div>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 1</label>
+        <div class = "col-sm-10">
+          <select class="form-control resize"name="dorm_pref_1" <%= @editable %>>
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_1 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 2</label>
+        <div class = "col-sm-10">
+          <select class="selectpicker form-control resize" name="dorm_pref_2"  <%= @editable %>>
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_2 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <div class = "form-group">
+        <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 3</label>
+        <div class = "col-sm-10">
+          <select class="form-control resize" name="dorm_pref_3" <%= @editable %>>
+            <% @dorms.each do |dorm| %>
+              <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_3 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
+            <% end %>
+          </select>
+          <br />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="camera" class="col-sm-2 control-label">Preferinte Coleg</label>
+        <div class="col-sm-10">
+          <input type="preferinteColeg" name = "roommate_pref" class="form-control resize" id="colegCamin" value="<%= @accomodation.roommate_pref %>" <%= @editable %>>
+          <br />
+        </div>
+      </div>
+      <div class = "form-group">
+        <label class = "col-sm-2 control-label"> Rog comisia sa tin cont de: </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" value="option1" name = "is_continuity"<%= (!@accomodation.is_continuity.nil?) ? 'checked' : '' %> <%= @editable %>> Continuitate
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" value="option2" name = "is_social"name="is_social" <%= (!@accomodation.is_social.nil?) ? 'checked' : '' %> <%= @editable %>> Situatie sociala
+        </label>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" style="margin-right: 10px;" onclick="cancelRequest(<%= @accomodation.id %>)" class="btn btn-danger">Anuleaza</button>
+        <button style="margin-right: 10px;" class="btn btn-info " name="saved" type="submit">Salveaza</button> 
+        <button style="margin-right: 10px;" class="btn btn-success " name="sent" type="submit">Depune</button>
+        </div>
       </div>
     </div>
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 1</label>
-      <div class = "col-sm-10">
-        <select class="form-control resize" <%= @editable %>>
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_1 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
-      </div>
-    </div>
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 2</label>
-      <div class = "col-sm-10">
-        <select class="form-control resize" <%= @editable %>>
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_2 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
-      </div>
-    </div>
-
-    <div class = "form-group">
-      <label for="Camine" class="col-sm-2 control-label">Preferinte Camin 3</label>
-      <div class = "col-sm-10">
-        <select class="form-control resize" <%= @editable %>>
-          <% @dorms.each do |dorm| %>
-            <option value="<%= dorm.id %>" <%= (@accomodation.dorm_pref_3 == dorm.id.to_s) ? 'selected' : '' %>><%= dorm.name %></option>
-          <% end %>
-        </select>
-        <br />
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="camera" class="col-sm-2 control-label">Preferinte Coleg</label>
-      <div class="col-sm-10">
-        <input type="preferinteColeg" name = "roommate_pref" class="form-control resize" id="colegCamin" value="<%= @accomodation.roommate_pref %>" <%= @editable %>>
-        <br />
-      </div>
-    </div>
-    <div class = "form-group">
-      <label class = "col-sm-2 control-label"> Rog comisia sa tin cont de: </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1" name = "is_continuity"<%= (!@accomodation.is_continuity.nil?) ? 'checked' : '' %> <%= @editable %>> Continuitate
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2" name = "is_social"name="is_social" <%= (!@accomodation.is_social.nil?) ? 'checked' : '' %> <%= @editable %>> Situatie sociala
-      </label>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" style="margin-right: 10px;" onclick="cancelRequest(<%= @accomodation.id %>)" class="btn btn-danger">Anuleaza</button>
-      </div>
-    </div>
-
   </form>
 </div>
 
