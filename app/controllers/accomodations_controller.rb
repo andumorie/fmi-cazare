@@ -76,7 +76,7 @@ class AccomodationsController < ApplicationController
       @current_user.accomodation = @accomodation
       @current_user.save
 
-      redirect_to '/profil_student'
+      redirect_to '/creeaza_cerere'
       return
     end
 
@@ -118,7 +118,7 @@ class AccomodationsController < ApplicationController
         end
       end
 
-      redirect_to '/profil_student'
+      redirect_to '/creeaza_cerere'
       return
     end
 
@@ -132,7 +132,7 @@ class AccomodationsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => { 'data' => '/profil_student' } }
+      format.json { render :json => { 'data' => '/creeaza_cerere' } }
     end
   end
 

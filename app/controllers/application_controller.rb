@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
           render :json => { 'error' => 'Access Denied' }.to_json
         }
       end
-    end  
+    end
   end
 
   def get_current_user

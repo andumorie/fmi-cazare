@@ -4,7 +4,7 @@ class GuestsController < ApplicationController
     if get_current_user
       if get_current_user.is_student == "true"
         respond_to do |format|
-          format.html { redirect_to '/profil_student' }
+          format.html { redirect_to '/creeaza_cerere' }
         end
       end
       if get_current_user.is_management == "true"
