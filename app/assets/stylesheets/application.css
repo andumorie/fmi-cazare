@@ -5993,3 +5993,13 @@ input:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+body {
+  padding-top:100px;
+}
+.cronian_logo{
+  text-align: center;
+}
+.cronian_logo > img {
+  width:160px;
+  margin-top:40px;
+}
