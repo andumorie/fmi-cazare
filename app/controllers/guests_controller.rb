@@ -24,4 +24,6 @@ class GuestsController < ApplicationController
     end
  end
 
+ def ajutor
+ end
 end

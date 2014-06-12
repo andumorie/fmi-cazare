@@ -29,6 +29,7 @@ FmiCazare::Application.routes.draw do
   match '/decizia_comisiei', to: 'accomodations#decision', via: 'get'
   match '/metodologie', to:'accomodations#metodologie', via: 'get'
   match '/camine', to: 'accomodations#camine', via: 'get'
+  match '/ajutor', to: 'guests#ajutor', via: 'get'
 
 
 end
