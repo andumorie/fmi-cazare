@@ -1,15 +1,10 @@
 FmiCazare::Application.routes.draw do
 
   resources :rooms
-
   resources :guests
-
   resources :dorms_categories
-
   resources :dorms
-
   resources :documents
-
   resources :accomodations
 
   root to: 'guests#index'
@@ -27,9 +22,8 @@ FmiCazare::Application.routes.draw do
   match '/profil_student', to: 'accomodations#student_profile', via: 'get'
   match '/rezultate_verificare', to: 'accomodations#verified_results', via: 'get'
   match '/decizia_comisiei', to: 'accomodations#decision', via: 'get'
-  match '/metodologie', to:'accomodations#metodologie', via: 'get'
+  match '/metodologie', to: 'accomodations#metodologie', via: 'get'
   match '/camine', to: 'accomodations#camine', via: 'get'
   match '/ajutor', to: 'guests#ajutor', via: 'get'
-
 
 end

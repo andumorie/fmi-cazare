@@ -12,14 +12,14 @@
         <ul class = "nav navbar-nav navbar-right">
           <li><%= link_to "Metodologie", "http://www.unibuc.ro/n/student/Metodologie_si_reguli_de_cazare_prevederi_generale.php", target: "_blank"  %></li>
           <li><%= link_to "Prezentare Camine","http://www.unibuc.ro/n/student/Prezentarea_caminelor_Universitatii_din_Bucureti.php", target: "_blank" %> </li>
-         <li><%= link_to "Ajutor","/ajutor/"%> </li>
+          <li><%= link_to "Ajutor","/ajutor/"%> </li>
           <% if !@current_user %>
-            <li><%= link_to "Autentificare", "auth/autentificare" %></li>
+            <li><%= link_to "Autentificare", "/auth/autentificare" %></li>
           <% else %>
             <% if @current_user.accomodation.nil? %>
-                <li><a href="creeaza_cerere">Cerere cazare</a></li>
+                <li><a href="/creeaza_cerere">Cerere cazare</a></li>
             <% else %>
-                <li><a href="vezi_cerere">Cerere cazare</a>
+                <li><a href="/vezi_cerere">Cerere cazare</a>
             <% end %>
             <!--<li class="divider"></li>
             <li><a href="#">Vezi decizie comisie</a></li>-->

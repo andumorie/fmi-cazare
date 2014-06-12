@@ -22,8 +22,10 @@ class GuestsController < ApplicationController
         format.html # index.html.erb
       end
     end
- end
+  end
 
- def ajutor
- end
+  def ajutor
+    get_current_user
+  end
+
 end

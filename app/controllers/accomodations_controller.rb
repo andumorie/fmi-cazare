@@ -60,10 +60,10 @@ class AccomodationsController < ApplicationController
           @accomodation.documents.create({'name' => document.original_filename})
 
           # create directories if they don't exist
-          Dir.mkdir(File.join("uploads")) unless Dir.exists?(File.join("uploads"))
-          Dir.mkdir(File.join("uploads", @current_user.uid.to_s)) unless Dir.exists?(File.join("uploads", @current_user.uid.to_s))
+          Dir.mkdir(File.join("public/uploads")) unless Dir.exists?(File.join("public/uploads"))
+          Dir.mkdir(File.join("public/uploads", @current_user.uid.to_s)) unless Dir.exists?(File.join("public/uploads", @current_user.uid.to_s))
 
-          path = File.join("uploads", @current_user.uid.to_s, document.original_filename)
+          path = File.join("public/uploads", @current_user.uid.to_s, document.original_filename)
           File.open(path, "wb") { |f| f.write(document.read) }
         end
       end
@@ -110,10 +110,10 @@ class AccomodationsController < ApplicationController
           @accomodation.documents.create({'name' => document.original_filename})
 
           # create directories if they don't exist
-          Dir.mkdir(File.join("uploads")) unless Dir.exists?(File.join("uploads"))
-          Dir.mkdir(File.join("uploads", @current_user.uid.to_s)) unless Dir.exists?(File.join("uploads", @current_user.uid.to_s))
+          Dir.mkdir(File.join("public/uploads")) unless Dir.exists?(File.join("public/uploads"))
+          Dir.mkdir(File.join("public/uploads", @current_user.uid.to_s)) unless Dir.exists?(File.join("public/uploads", @current_user.uid.to_s))
 
-          path = File.join("uploads", @current_user.uid.to_s, document.original_filename)
+          path = File.join("public/uploads", @current_user.uid.to_s, document.original_filename)
           File.open(path, "wb") { |f| f.write(document.read) }
         end
       end
