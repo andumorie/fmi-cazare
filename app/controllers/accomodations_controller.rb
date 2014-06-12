@@ -76,7 +76,7 @@ class AccomodationsController < ApplicationController
       @current_user.accomodation = @accomodation
       @current_user.save
 
-      redirect_to '/creeaza_cerere'
+      redirect_to '/vezi_cerere'
       return
     end
 
